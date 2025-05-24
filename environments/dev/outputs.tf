@@ -3,14 +3,19 @@ output "rg_name" {
   value       = azurerm_resource_group.rg.name
 }
 
+output "location" {
+  description = "The location of the resource group"
+  value       = azurerm_resource_group.rg.location
+}
+
 output "aks_vnet_name" {
   description = "The name of the Virtual Network"
-  value       = module.network.aks_vnet_name
+  value       = module.network.vnet_name
 }
 
 output "aks_subnet_name" {
   description = "The name of the subnet for AKS"
-  value       = module.network.aks_subnet_name
+  value       = module.network.subnet_name
 }
 
 output "acr_names" {
@@ -32,4 +37,19 @@ output "acr_admin_passwords" {
   description = "Map of ACR admin passwords by key"
   value       = { for k, m in module.acr : k => m.admin_password }
   sensitive   = true
+}
+
+output "aks_cluster_name" {
+  description = "The name of the AKS cluster"
+  value       = module.aks.name
+}
+
+output "aks_cluster_version" {
+  description = "AKS cluster version"
+  value       = module.aks.version
+}
+
+output "aks_node_resource_group" {
+  description = "The name of the node resource group"
+  value       = module.aks.node_resource_group
 }

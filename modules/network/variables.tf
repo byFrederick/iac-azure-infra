@@ -18,12 +18,12 @@ variable "vnet_address_space" {
   description = "The address space of the virtual network"
 }
 
-variable "aks_subnet_name" {
+variable "subnet_name" {
   type        = string
   description = "The name of the subnet for AKS"
 }
 
-variable "aks_subnet_address_prefixes" {
+variable "subnet_address_prefixes" {
   type        = list(string)
   description = "The address prefix of the subnet for AKS"
 }
