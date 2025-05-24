@@ -4,12 +4,15 @@
 
 - Added NGINX ingress controller module. I made use of Helm for the deployment.
 - Changed environments/dev/main.tf file to use nginx_ingress_controler module.
-- Created [nginx_ingress_values](https://github.com/byFrederick/iac-azure-infra/commit/34232dd5fd04db0014635d941326bb9bbcc38de8#diff-53ffef144479994e747804fc4e94abc40f1ea6aa9da236245278b030d92935cf) file which is the values file that will use Helm to deploy the ingress controller
+- Created nginx_ingress_values file which is the values file that will use Helm to deploy the ingress controller
 - Changed providers file to add Helm provider
 
 Sources
 
-- https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_registry
+- https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release
+- https://developer.hashicorp.com/terraform/tutorials/kubernetes/helm-provider
+- https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
+- https://learn.microsoft.com/en-us/azure/aks/kubernetes-helm
 
 ---
 
