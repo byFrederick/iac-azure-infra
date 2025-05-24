@@ -33,6 +33,7 @@ module "aks" {
   location = azurerm_resource_group.rg.location
   name = var.aks_name
   dns_prefix = var.aks_dns_prefix
+  kubernetes_version = var.aks_kubernetes_version
   default_node_pool_name = var.aks_default_node_pool_name
   default_node_pool_node_count = var.aks_default_node_pool_node_count
   default_node_pool_vm_size = var.aks_default_node_pool_vm_size
@@ -41,4 +42,17 @@ module "aks" {
   network_plugin = var.aks_network_plugin
   network_plugin_mode = var.aks_network_plugin_mode
   network_policy = var.aks_network_policy
+}
+
+# Attach registries created to the AKS cluster
+module "identity" {
+  source = "../../modules/identity"
+  acr_attachments = {
+    # Iterate ACR module to each registry values
+    for key, value in module.acr:
+    key => {
+      principal_id = module.aks.kubelet_identity[0].object_id
+      scope        = value.id
+    }
+  }
 }

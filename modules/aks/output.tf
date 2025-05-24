@@ -21,5 +21,5 @@ output "kube_config" {
 
 output "kubelet_identity" {
   description = "Object ID of the AKS Kubelet managed identity"
-  value       = azurerm_kubernetes_cluster.aks.kubelet_identity[0].client_id
+  value       = azurerm_kubernetes_cluster.aks.kubelet_identity
 }

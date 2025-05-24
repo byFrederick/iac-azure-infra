@@ -3,6 +3,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   location            = var.location
   resource_group_name = var.resource_group_name
   dns_prefix          = var.dns_prefix
+  kubernetes_version  = var.kubernetes_version
 
   # System Node Pool used primarily for system components (coreDNS, metrics-server, etc.)
   default_node_pool {

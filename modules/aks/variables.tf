@@ -18,6 +18,11 @@ variable "dns_prefix" {
   description = "The DNS prefix of the AKS cluster"
 }
 
+variable "kubernetes_version" {
+  type        = string
+  description = "The kubernete version AKS will run"
+}
+
 variable "default_node_pool_name" {
   type        = string
   description = "The name of the default node pool"

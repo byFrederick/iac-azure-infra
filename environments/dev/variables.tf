@@ -40,7 +40,7 @@ variable "subnet_address_prefixes" {
 }
 
 variable "acr_registries" {
-  type        = map(object({
+  type = map(object({
     name                     = string
     sku                      = string
     zone_redundancy_enabled  = bool
@@ -77,7 +77,11 @@ variable "aks_dns_prefix" {
   description = "The DNS prefix of the AKS API server"
   default     = "aks-dev"
 }
-
+variable "aks_kubernetes_version"{
+  type        = string
+  description = "The kubernete version AKS will run"
+  default     = "1.32.4"
+}
 variable "aks_default_node_pool_name" {
   type        = string
   description = "The name of the default node pool"
