@@ -123,3 +123,39 @@ variable "aks_network_policy" {
   description = "network policy to be used with Azure CNI"
   default     = "calico"
 }
+
+variable "nginx_ingress_controller_release_name" {
+  type        = string
+  description = "Helm release name"
+  default     = "nginx-ingress-controller"
+}
+
+variable "nginx_ingress_controller_namespace" {
+  type        = string
+  description = "Kubernetes namespace to deploy into"
+  default     = "ingress-nginx"
+}
+
+variable "nginx_ingress_controller_create_namespace" {
+  type        = bool
+  description = "Whether to create the namespace if it does not exist"
+  default     = true
+}
+
+variable "nginx_ingress_controller_chart_repo" {
+  type        = string
+  description = "URL of the Helm chart repository"
+  default     = "https://kubernetes.github.io/ingress-nginx"
+}
+
+variable "nginx_ingress_controller_chart_name" {
+  type        = string
+  description = "Name of the chart"
+  default     = "ingress-nginx"
+}
+
+variable "nginx_ingress_controller_chart_version" {
+  type        = string
+  description = "Version of the chart to install"
+  default     = "4.12.2"
+}

@@ -10,12 +10,12 @@ variable "location" {
 
 variable "name" {
   type        = string
-  description = "The name of the container registry"
+  description = "Name of the container registry"
 }
 
 variable "sku" {
   type        = string
-  description = "The SKU of the container registry"
+  description = "SKU of the container registry"
 }
 
 variable "zone_redundancy_enabled" {
@@ -25,7 +25,7 @@ variable "zone_redundancy_enabled" {
 
 variable "retention_policy_in_days" {
   type        = number
-  description = "The retention policy in days for the container registry"
+  description = "Retention policy in days for the container registry"
 }
 
 variable "admin_enabled" {

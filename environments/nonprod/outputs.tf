@@ -53,3 +53,33 @@ output "aks_node_resource_group" {
   description = "The name of the node resource group"
   value       = module.aks.node_resource_group
 }
+
+output "nginx_ingress_controller_release_name" {
+  description = "Helm release name"
+  value       = module.nginx_ingress_controller.release_name
+}
+
+output "nginx_ingress_controller_namespace" {
+  description = "Namespace where the ingress controller was installed"
+  value       = module.nginx_ingress_controller.namespace
+}
+
+output "nginx_ingress_controller_chart" {
+  description = "The chart identifier used"
+  value       = module.nginx_ingress_controller.chart
+}
+
+output "nginx_ingress_controller_chart_version" {
+  description = "Chart version deployed"
+  value       = module.nginx_ingress_controller.chart_version
+}
+
+output "nginx_ingress_controller_app_version" {
+  description = "App version"
+  value       = module.nginx_ingress_controller.app_version
+}
+
+output "nginx_ingress_controller_status" {
+  description = "Helm release status"
+  value       = module.nginx_ingress_controller.status
+}
