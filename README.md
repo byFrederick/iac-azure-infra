@@ -39,3 +39,4 @@ You can modify terraform.tfvars to override default values. Also, you can config
 
 - Expand AKS module to be able to create more resources and have a greater customization e.g. additional node pools, configure maintenance windows, and upgrades strategy. 
 - Use just one variable for each module of type object.
+- Move the tf state from my machine to a remote storage backend e.g. Blob Storage.
