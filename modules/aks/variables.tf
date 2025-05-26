@@ -59,6 +59,6 @@ variable "network_plugin_mode" {
 }
 
 variable "network_policy" {
-  type       = string
+  type        = string
   description = "network policy to be used with Azure CNI"
 }

@@ -19,7 +19,7 @@ module "acr" {
   location            = azurerm_resource_group.rg.location
 
   for_each = var.acr_registries
-  
+
   name                     = each.value.name
   sku                      = each.value.sku
   zone_redundancy_enabled  = each.value.zone_redundancy_enabled
@@ -28,7 +28,7 @@ module "acr" {
 }
 
 module "aks" {
-  source = "../../modules/aks"
+  source                           = "../../modules/aks"
   resource_group_name              = azurerm_resource_group.rg.name
   location                         = azurerm_resource_group.rg.location
   name                             = var.aks_name
@@ -48,9 +48,8 @@ module "aks" {
 module "identity" {
   source = "../../modules/identity"
   acr_attachments = {
-
     # Iterate ACR module to each registry values
-    for key, value in module.acr:
+    for key, value in module.acr :
     key => {
       principal_id = module.aks.kubelet_identity[0].object_id
       scope        = value.id
@@ -69,5 +68,5 @@ module "nginx_ingress_controller" {
   chart_version    = var.nginx_ingress_controller_chart_version
 
   # Helm values file for nginx ingress controller chart
-  values           = [file("${path.module}/nginx_ingress_values.yaml")]
+  values = [file("${path.module}/nginx_ingress_values.yaml")]
 }

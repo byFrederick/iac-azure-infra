@@ -49,6 +49,12 @@ output "aks_cluster_version" {
   value       = module.aks.version
 }
 
+output "aks_kubeconfig" {
+  description = "Raw Kubeconfig"
+  value       = module.aks.kube_config_raw
+  sensitive   = true
+}
+
 output "aks_node_resource_group" {
   description = "The name of the node resource group"
   value       = module.aks.node_resource_group

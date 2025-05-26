@@ -15,9 +15,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   network_profile {
-    network_plugin = var.network_plugin
+    network_plugin      = var.network_plugin
     network_plugin_mode = var.network_plugin_mode
-    network_policy = var.network_policy
+    network_policy      = var.network_policy
   }
   identity {
     type = "SystemAssigned"

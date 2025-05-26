@@ -48,18 +48,18 @@ variable "acr_registries" {
     admin_enabled            = bool
   }))
   description = "The container registries to deploy"
-  default     = {
+  default = {
     primary_acr = {
-      name = "acrdevprimary"
-      sku = "Standard"
-      zone_redundancy_enabled = false
+      name                     = "acrdevprimary"
+      sku                      = "Standard"
+      zone_redundancy_enabled  = false
       retention_policy_in_days = 0
       admin_enabled            = true
     }
     secondary_acr = {
-      name = "acrdevsecondary"
-      sku = "Standard"
-      zone_redundancy_enabled = false
+      name                     = "acrdevsecondary"
+      sku                      = "Standard"
+      zone_redundancy_enabled  = false
       retention_policy_in_days = 0
       admin_enabled            = true
     }
@@ -77,7 +77,7 @@ variable "aks_dns_prefix" {
   description = "The DNS prefix of the AKS API server"
   default     = "aks-dev"
 }
-variable "aks_kubernetes_version"{
+variable "aks_kubernetes_version" {
   type        = string
   description = "The kubernete version AKS will run"
   default     = "1.32.4"

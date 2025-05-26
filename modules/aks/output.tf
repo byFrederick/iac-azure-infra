@@ -23,3 +23,8 @@ output "kubelet_identity" {
   description = "Object ID of the AKS Kubelet managed identity"
   value       = azurerm_kubernetes_cluster.aks.kubelet_identity
 }
+
+output "kube_config_raw" {
+  description = "Raw Kubeconfig"
+  value       = azurerm_kubernetes_cluster.aks.kube_config_raw
+}
